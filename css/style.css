@@ -110,8 +110,6 @@ a {
     justify-content: space-between;
     /* flex-wrap: wrap; */
     min-height: inherit;
-
-
 }
 .promo-photo {
     width: 800px;
@@ -163,10 +161,11 @@ a {
 .catalog-list {
     list-style: none;
     display: grid;
-    /* grid-template-columns: repeat(3, 360px); */
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(30%, 360px));
+    /* grid-template-columns: 1fr 1fr 1fr; */
     gap: 30px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .catalog-list-item-big {
     grid-column: span 3;
@@ -174,6 +173,7 @@ a {
 .catalog-item {
     max-width: 360px;
     width: 100%;
+    box-sizing: border-box;
 }
 .catalog-item-big {
     max-width: 1140px;
@@ -230,13 +230,12 @@ a {
 .assortment-list {
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;;
+    grid-template-columns: repeat(3, minmax(30%, 360px));
     gap: 30px;
     justify-content: center;
 }
 .assortment-item {
-    max-width: 360px;
-    width: 100%;
+    width: 360px;
     padding: 0 0 20px 0;
     background: #F8F8F8;
 }
@@ -295,24 +294,30 @@ a {
         max-width: 169px;
         width: 100%;
         padding: 19px 32px 18px 0;
-
     }
     .promo-photo {
         width: 386px;
         height: 368px;
     }
     .top-promo-text {
-        width: 311px;
-        height: 92px;
+        max-width: 311px;
+        width: 100%;
         padding: 138px 0 137px 0;
+    }
+    .promo-title {
+        width: 283px;
+        height: 78px;
     }
     .title {
         font-size: 44px;
-    line-height: 53px;
+        line-height: 53px;
     }
     .minititle {
         font-size: 24px;
         line-height: 29px;
+    }
+    .catalog {
+        margin: 0 0 109.92px 0;
     }
     .center-block {
         max-width: 736px;
@@ -335,10 +340,13 @@ a {
     }
     .catalog-item-big .photo-accesories {
         width: 734.58px;
-        height: 116.09px;
+        height: 116.04px;
     }
     .catalog-item-big .catalog-item-title {
         padding: 33px 0;
+    }
+    .assortment-item-photo {
+        height: 418px;
     }
     .assortment-title {
         margin: 0 0 3.3px 0;
@@ -354,3 +362,5 @@ a {
         padding: 32.48px;
     }
 }
+
+    
