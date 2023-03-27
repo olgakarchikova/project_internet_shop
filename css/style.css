@@ -19,6 +19,21 @@ a {
     width: 100%;
     margin: 0 auto;
 }
+.center-block {
+    /* width: 100%;
+    max-width: 1140px;
+    margin: 0 auto; */
+
+        display: flex;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    min-height: inherit
+    }
 .minititle {
     font-weight: 700;
     font-size: 32px;
@@ -34,7 +49,9 @@ a {
     color: #F16D7F;
 }
 .top {
-    
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
 }
 .header {
     background-color: #222222;
@@ -89,17 +106,31 @@ a {
 }
 /* ========= top-promo ========*/
 .top-promo {
-    margin: 0 0 65px 0;
+    width: 808px;
+    width: 100%;
+    min-height: 764px;
+    margin: 0 auto 65px auto;
     background-color: #F1E4E6;
-    display: flex;
+    /* display: flex;
     align-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    min-height: inherit;
 }
 .promo-photo {
     width: 800px;
     height: 764px;
-    margin: 0 63px 0 0;
+    /* margin: 0 63px 0 0; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: inherit;
     background-image: url(../img/top_promo.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -107,6 +138,8 @@ a {
 }
 .top-promo-text {
     display: flex;
+    padding: 289px 0 381px 0;
+    margin: 0 auto 0 auto;
     max-width: 405px;
     width: 100%;   
 }
@@ -140,9 +173,11 @@ a {
 .catalog-list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 360px);
+    grid-template-columns: repeat(3, minmax(30%, 360px));
+    /* grid-template-columns: 1fr 1fr 1fr; */
     gap: 30px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .catalog-list-item-big {
     grid-column: span 3;
@@ -150,6 +185,7 @@ a {
 .catalog-item {
     max-width: 360px;
     width: 100%;
+    box-sizing: border-box;
 }
 .catalog-item-big {
     max-width: 1140px;
@@ -188,12 +224,13 @@ a {
 }
 /* ============ assortment ===============*/
 .assortment {
- margin: 0 0 60px 0;
+ margin: 0 0 95px 0;
 }
 .assortment-title {
     font-size: 30px;
     line-height: 36px;
     text-align: center;
+    margin: 0 0 6px 0;
 }
 .assortment-txt {
     font-size: 14px;
@@ -203,31 +240,86 @@ a {
     color: #9F9F9F;
 }
 .assortment-list {
-    list-style: none;
-    margin: 0 0 48px 0;
+    /* list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 360px);
+    grid-template-columns: repeat(3, minmax(30%, 360px));
     gap: 30px;
-    justify-content: center;
+    justify-content: center; */
+
+    list-style-type: none;
+    margin: 0 auto 18px auto;
+    flex-wrap: wrap;
 }
 .assortment-item {
-    max-width: 360px;
+    display: block;
     width: 100%;
+    max-width: 360px;
+    margin: 0 0 30px 0;
+    position: relative;
+    background: #F8F8F8;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.assortment-item:hover .assortment-item-btn {
+    display: flex
+}
+.assortment-item:hover .assortment-item-btn:hover {
+    background-color: #ccc;
+    color: #000;
+    border: 1px solid #000;
+}
+.assortment-item:hover .assortment-item-btn:hover svg {
+    fill: #000;
+}
+.assortment-item:hover .assortment-item-btn:active {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.assortment-item:hover .assortment-item-btn:active svg {
+    fill: #fff;
+}
+.assortment-item:hover .assortment-item-photo-wrp::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(58, 56, 56, 0.86);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.assortment-item-brand {
+    width: 360px;
     padding: 0 0 20px 0;
     background: #F8F8F8;
+}
+.assortment-item-photo-wrp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #F7E4E2;
+    box-sizing: border-box;
+    position: relative;
 }
 .assortment-item-photo {
     width: 360px;
     height: 420px;
     margin: 0 0 24px 0;
 }
-.assortment-item-photo img {
+.assortment-item-photo {
+    /* display: block;
+    width: 100%;
+    height: 100%; */
+
     display: block;
     width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 .assortment-item-wrp {
-
+    padding: 0 28.8px 0 16.46px;
 }
 .assortment-item-title {
     font-size: 13px;
@@ -245,8 +337,30 @@ a {
 .assortment-item-wrp-price {
     color: #F16D7F;
 }
+.assortment-item-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 160px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    position: absolute;
+    top: 30%;
+    left: calc(50% - 80px);
+}
+.assortment-item-btn svg {
+    fill: #fff;
+    margin: 0 11px 0 0;
+}
 .assortment-btn {
-
+    padding: 48px 0 0 0;
 }
 .assortment-button {
     margin: 0 auto;
@@ -258,5 +372,456 @@ a {
     color: #F16D7F;
     background: #FFFFFF;
     border: 1px solid #FF6A6A;
-   
 }
+/*========== advantages =============*/
+.advantages {
+    width: 100%;
+    min-height: 341px;
+    background-color: #222224;
+    color: #FBFBFB;
+    box-sizing: border-box;
+}
+.advantages-list {
+    list-style: none;
+    
+}
+.advantages-item {
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.advantages-item-icon { 
+    display: block;
+    margin: 0 0 28px 0;
+    fill: #F16D7F;
+}
+.advantages-item-title {
+    font-size: 19.96px;
+    line-height: 24px;
+    display: block;
+    width: 100%;
+    margin: 0 0 16px 0;
+    text-align: center;
+}
+.advantages-item-txt {
+    font-weight: 300;
+    font-size: 13.972px;
+    line-height: 17px;
+    text-align: center;
+}
+/*=========== subscrib =============*/
+.subscribe {
+    min-height: 448px;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(244,244,244, 0.7), rgba(244,244,244, 0.7)), url(../img/subscribe-photo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #F3F3F3;
+}
+.subscribe-info {
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* outline: 1px solid red; */
+}
+.subscribe-info-avatar {
+    width: 96px;
+    height: 96px;
+    margin: 0 0 30px 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.subscribe-info-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.subscribe-info-txt {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #222224;
+}
+.subscribe-info-txt span {
+    font-style: italic;
+}
+.subscribe-form-wrp {
+    width: 100%;
+    max-width: 356px;
+}
+.subscribe-form-title .subscribe-form-txt {
+    text-align: center;
+    color: #222224;
+    text-transform: uppercase;
+    text-align: center;
+}
+.subscribe-form-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+} 
+.subscribe-form-txt {
+    font-size: 18px;
+    line-height: 30px;
+    display: block;
+    margin: 0 0 32px 0;
+    text-align: center;
+}
+.subscribe-form {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 49px;
+    max-width: 356px;   
+    margin: 0 auto;
+}
+.subscribe-form-email {
+    width: 100%;
+    max-width: 256px;
+    min-height: 49px; 
+    padding: 7px 64px 6px 32px;
+    font-size: 14px;
+    line-height: 17px; 
+    box-sizing: border-box;
+    border: none;
+    border-radius: 30px 0 0 30px ;
+    display: flex;
+    align-items: center;
+    color: #222224;
+    background-color: #E1E1E1;
+    opacity: 0.67; 
+}
+.subscribe-form-btn {
+    max-width: 100px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: block;
+    padding: 16px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    color: #FFFFFF;
+    background-color: #F16D7F;
+} 
+.subscribe-form-btn:hover {
+    background-color: #fff;
+    color: #F16D7F;
+}
+  .subscribe-form-btn:active {
+    background-color: #F16D7F;
+    color: #fff;
+}
+/* ========== footer =========*/
+.footer {
+    min-height: 79px;
+    padding: 5px 32px;
+    box-sizing: border-box;
+    background-color: #222224;
+}
+.copyright {
+    font-size: 16px;
+    line-height: 19px;
+    color: #FBFBFB;
+}
+.social-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 147px;
+}
+  .social-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+}
+  .social-item svg {
+    fill: #000;
+    margin: auto;
+}
+  .social-item:hover svg {
+    fill: #F16D7F;
+}
+  .social-item:active {
+    background-color: #F16D7F;
+}
+  .social-item:active svg {
+    fill: #fff;
+}
+  .social-item-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+} 
+
+@media (max-width: 1024px) {
+    .center {
+        max-width: 768px;
+    }
+    .header-logo-search {
+        padding: 18px 0 18px 32px;
+    }
+    .header-btn {
+        max-width: 169px;
+        width: 100%;
+        padding: 19px 32px 18px 0;
+    }
+    .promo-photo {
+        width: 386px;
+        height: 368px;
+    }
+    .top-promo-text {
+        max-width: 311px;
+        width: 100%;
+        padding: 138px 0 137px 0;
+    }
+    .promo-title {
+        width: 283px;
+        height: 78px;
+    }
+    .title {
+        font-size: 44px;
+        line-height: 53px;
+    }
+    .minititle {
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .catalog {
+        margin: 0 0 109.92px 0;
+    }
+    .center-block {
+        max-width: 736px;
+    }
+    .catalog-list {
+        gap: 19.9px;
+    }
+    .catalog-item {
+        max-width: 232px;
+    }
+    .catalog-item-photo {
+        width: 232.33px;
+        height: 167.62px;
+    }
+    .catalog-item-title {
+        padding: 59px 0;
+    }
+    .catalog-item-big {
+        max-width: 734.58px;
+    }
+    .catalog-item-big .photo-accesories {
+        width: 734.58px;
+        height: 116.04px;
+    }
+    .catalog-item-big .catalog-item-title {
+        padding: 33px 0;
+    }
+    .assortment-item-photo {
+        height: 418px;
+    }
+    .assortment-title {
+        margin: 0 0 3.3px 0;
+    }
+    .assortment-txt {
+        margin: 0 0 72.74px 0;
+    }
+    .assortment-list {
+        grid-template-columns: repeat(2, minmax(30%, 360px));
+        justify-content: center;
+    }
+    .assortment-btn {
+        padding: 32.48px;
+    }
+    .advantages {
+        min-height: 610px;
+        padding: 48px 0 64px 0;
+    }
+    .advantages-list {
+        flex-direction: column;
+    }
+    .advantages-item {
+        margin: 0 auto 48px auto; 
+    }
+    .advantages-item:last-child {
+        margin: 0 auto;
+    }
+    .subscribe {
+        min-height: auto;
+        padding: 64px 0 140px 0;
+        background-position: 24% 81px;
+        background-size: cover;
+    }
+    .subscribe .center-block {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .subscribe-info {
+        margin: 0 auto 48px auto;
+    }
+    .subscribe-form-title {
+        line-height: 39px;
+    }
+    .subscribe-form-txt {
+        line-height: 29px;
+        margin: 0 0 27px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .center {
+        max-width: 368px;
+    }
+    .header-logo-search {
+        padding: 18px 0 18px 16px;
+    }
+    .header-btn {
+        max-width: 32px;
+        width: 100%;
+        padding: 25px 16px 26px 0;
+    }
+    .btn-menu {
+        fill: #E8E8E8;
+        width: 32px;
+        height: 23px;
+    }
+    .btn-account {
+        display: none;
+    }
+    .btn-cart {
+        display: none;
+    }
+    .promo-photo {
+        display: none;
+    }
+    .top-promo-text {
+        padding: 148px 0 149px 0;
+        max-width: 263px;
+        width: 100%;   
+    }
+    .promo-element {
+        width: 12px;
+        height: 61px;
+        margin: 0 15px 0 0;
+    }
+    .promo-title {
+        width: 263px;
+        height: 66px;
+    }
+    .title {
+        font-size: 38px;
+        line-height: 46px;
+    }
+    .minititle {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .catalog {
+        margin: 0 0 64px 0;
+    }
+    .catalog-list {
+        justify-content: center;
+        gap: 32px;
+        display: flex;
+    }    
+    .center-block {
+        max-width: 343px;
+    }
+    .catalog-item {
+        max-width: 343px;
+    }
+    .catalog-item-photo {
+        width: 343px;
+        height: 419px;
+    }
+    .catalog-item-big {
+        max-width: 343px;
+    }
+    .catalog-item-big .photo-accesories {
+        width: 343px;
+        height: 111px;
+    }
+    .catalog-item-title {
+        padding: 99px 0;
+    }
+    .assortment-list {
+        grid-template-columns: repeat(1, minmax(30%, 360px));
+        justify-content: center;
+    }
+    .assortment-txt {
+        margin: 0 0 64.7px 0;
+    }
+    .assortment-btn {
+        padding: 40.61px;
+    }
+    .advantages {
+        padding: 48px 0 81px 0;
+    }
+    .advantages-item {
+        max-width: 347px;
+        margin: 0 auto 46px auto;
+        padding: 0 14px;
+    }
+    .subscribe {
+        min-height: auto;
+        padding: 64px 0 109px 0;
+        background-position: 27% 0px;
+    }   
+    .subscribe-info {
+        max-width: 100%;
+        margin: 0 0 80px 0;
+    }
+    .subscribe-info-avatar {
+        margin: 0 0 29px 0;
+    }
+    .subscribe-info-txt {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .subscribe-form-subtitle {
+        margin: 0 0 22px 0;
+        font-size: 14px;
+        line-height: 19px;
+    }
+    .footer {
+        min-height: auto;
+        padding: 43px 62px 9px 62px;
+    }
+    .footer .center-block {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+    }
+    .copyright {
+        order: 2;
+        max-width: 251px;
+    }
+    .social-list {
+        max-width: 147px;
+        margin: 0 0 40px 0;
+        order: 1;
+    }
+
+}    
