@@ -240,26 +240,83 @@ a {
     color: #9F9F9F;
 }
 .assortment-list {
-    list-style: none;
+    /* list-style: none;
     display: grid;
     grid-template-columns: repeat(3, minmax(30%, 360px));
     gap: 30px;
-    justify-content: center;
+    justify-content: center; */
+
+    list-style-type: none;
+    margin: 0 auto 18px auto;
+    flex-wrap: wrap;
 }
 .assortment-item {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 0 30px 0;
+    position: relative;
+    background: #F8F8F8;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.assortment-item:hover .assortment-item-btn {
+    display: flex
+}
+.assortment-item:hover .assortment-item-btn:hover {
+    background-color: #ccc;
+    color: #000;
+    border: 1px solid #000;
+}
+.assortment-item:hover .assortment-item-btn:hover svg {
+    fill: #000;
+}
+.assortment-item:hover .assortment-item-btn:active {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.assortment-item:hover .assortment-item-btn:active svg {
+    fill: #fff;
+}
+.assortment-item:hover .assortment-item-photo-wrp::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(58, 56, 56, 0.86);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.assortment-item-brand {
     width: 360px;
     padding: 0 0 20px 0;
     background: #F8F8F8;
+}
+.assortment-item-photo-wrp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #F7E4E2;
+    box-sizing: border-box;
+    position: relative;
 }
 .assortment-item-photo {
     width: 360px;
     height: 420px;
     margin: 0 0 24px 0;
 }
-.assortment-item-photo img {
+.assortment-item-photo {
+    /* display: block;
+    width: 100%;
+    height: 100%; */
+
     display: block;
     width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 .assortment-item-wrp {
     padding: 0 28.8px 0 16.46px;
@@ -279,6 +336,28 @@ a {
 }
 .assortment-item-wrp-price {
     color: #F16D7F;
+}
+.assortment-item-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 160px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    position: absolute;
+    top: 30%;
+    left: calc(50% - 80px);
+}
+.assortment-item-btn svg {
+    fill: #fff;
+    margin: 0 11px 0 0;
 }
 .assortment-btn {
     padding: 48px 0 0 0;
